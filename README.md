@@ -87,7 +87,7 @@ watch(`dev/js/*.js`, series(validateJS, transpileJSForDev)).on(`change`, reload)
 ---
 
 ## ❖・Due・❖
-Thursday, 29 September 2022, at 4:00 PM.
+Thursday, 6 October 2022, at 4:00 PM.
 
 ---
 
