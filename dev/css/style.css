@@ -1,3 +1,10 @@
-h1 {
-    text-align: right;
+header {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    background: #bdbdbd;
+    border-radius: 20px;
+    border: 15px solid #999;
+    border-color: #bdbdbd;
 }
+
