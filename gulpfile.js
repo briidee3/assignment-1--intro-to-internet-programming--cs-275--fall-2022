@@ -1,4 +1,4 @@
-const { src, dest, series, watch } = require(`gulp`),
+const { watch } = require(`gulp`),
     CSSLinter = require(`gulp-stylelint`),
     del = require(`del`),
     babel = require(`gulp-babel`),
@@ -33,61 +33,6 @@ async function allBrowsers () {
     ];
 }
 
-let validateHTML = () => {
-    return src([
-        `dev/html/*.html`,
-        `dev/html/**/*.html`])
-        .pipe(htmlValidator(undefined));
-};
-
-let lintJS = () => {
-    return src(`dev/scripts/*.js`)
-        .pipe(jsLinter())
-        .pipe(jsLinter.formatEach(`compact`));
-};
-
-let transpileJSForDev = () => {
-    return src(`dev/scripts/*.js`)
-        .pipe(babel())
-        .pipe(dest(`temp/scripts`));
-};
-
-let compressHTML = () => {
-    return src([`dev/html/*.html`,`dev/html/**/*.html`])
-        .pipe(htmlCompressor({collapseWhitespace: true}))
-        .pipe(dest(`prod`));
-};
-
-let compileCSSForProd = () => {
-    return src(`dev/styles/scss/main.scss`)
-        .pipe(sass.sync({
-            outputStyle: `compressed`,
-            precision: 10
-        }).on(`error`, sass.logError))
-        .pipe(dest(`prod/styles`));
-};
-
-let transpileJSForProd = () => {
-    return src(`dev/scripts/*.js`)
-        .pipe(babel())
-        .pipe(jsCompressor())
-        .pipe(dest(`prod/scripts`));
-};
-
-let copyUnprocessedAssetsForProd = () => {
-    return src([
-        `dev/*.*`,       // Source all files,
-        `dev/**`,        // and all folders,
-        `!dev/html/`,    // but not the HTML folder
-        `!dev/html/*.*`, // or any files in it
-        `!dev/html/**`,  // or any sub folders;
-        `!dev/img/`,     // ignore images;
-        `!dev/**/*.js`,  // ignore JS;
-        `!dev/styles/**` // and, ignore Sass/CSS.
-    ], {dot: true})
-        .pipe(dest(`prod`));
-};
-
 let serve = () => {
     browserSync({
         notify: true,
@@ -95,24 +40,11 @@ let serve = () => {
         browser: browserChoice,
         server: {
             baseDir: [
-                `temp`,
-                `dev`,
-                `dev/html`
             ]
         }
     });
 
-    watch(`dev/scripts/*.js`, series(lintJS, transpileJSForDev))
-        .on(`change`, reload);
-
-    watch(`dev/styles/scss/**/*.scss`, compileCSSForDev)
-        .on(`change`, reload);
-
-    watch(`dev/html/**/*.html`, validateHTML)
-        .on(`change`, reload);
-
-    watch(`dev/img/**/*`)
-        .on(`change`, reload);
+    watch(`index.html`).on(`change`, reload);
 };
 
 async function clean() {
