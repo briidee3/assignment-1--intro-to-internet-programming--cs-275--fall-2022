@@ -1,7 +1,7 @@
 {
-  "name": "assignment-1--intro-to-internet-programming--cs-275--fall-2022",
+  "name": "v1",
   "version": "1.0.0",
-  "description": "",
+  "description": "* **Do not start this project until you have read these instructions carefully and you understand them. If something is not clear, ask.**",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
