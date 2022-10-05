@@ -13,6 +13,9 @@ let serve = () => {
             ]
         }
     });
+
+    watch(`js/app.js`).on(`change`, reload);
+    watch(`css/style.css`).on(`change`, reload);
     watch(`index.html`).on(`change`, reload);
 };
 
