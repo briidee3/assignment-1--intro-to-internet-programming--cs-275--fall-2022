@@ -16,4 +16,4 @@ let serve = () => {
     watch(`index.html`).on(`change`, reload);
 };
 
-exports.serve = series;
+exports.serve = serve;
