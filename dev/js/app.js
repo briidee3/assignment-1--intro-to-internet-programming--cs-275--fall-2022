@@ -1,6 +1,6 @@
 window.onload = () => {
     
-    let output = document.getElementById(`output`);
+    let matrix = document.getElementById(`initial`);
     let content = ``;
 
     let input = parseInt(window.prompt(`What size should the matrix be?`));
@@ -22,6 +22,6 @@ window.onload = () => {
 
     content += `</table>`;
 
-    output.innerHTML = content;
+    matrix.innerHTML = content;
 
 };
