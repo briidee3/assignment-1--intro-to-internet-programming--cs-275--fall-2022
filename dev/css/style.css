@@ -1,16 +1,18 @@
 h1 {
     text-align: center;
+    color: azure;
 }
 
 table,
 td {
-    border: 1px solid black;
+    border: 2px solid black;
     text-align: center;
 }
 
 table {
     border-collapse: collapse;
-    margin: 12px 0;
+    margin: 20px 0;
+    background-color: greenyellow;
 }
 
 td {
@@ -21,4 +23,8 @@ td {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+body {
+    background-image: url(https://media1.giphy.com/media/fS9PCxQYG0ULu/giphy.gif);
 }
