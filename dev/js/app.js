@@ -39,12 +39,13 @@ window.onload = () => {
 
         for (let j = 0; j < len; j++) {
 
-            let currNum = j + (i*len);  // set as default value for now
+            let currNum = 1 + j + (i*len);  // set as default value for now
 
-            if (!((len + ((len - 1) * i)))) {   // so the ones from northeast to southwest corners aren't affected
-                
+            // if so the ones from northeast to southwest corners aren't affected
+            if (!((len + ((len - 1) * i)) === currNum)) {
+                currNum = len*len - currNum;    // flip the numbers
+                currNum++;      // account for array index
             }
-            currNum = len*len - currNum;
             content += `<td>${currNum}</td>`;
         }
 
