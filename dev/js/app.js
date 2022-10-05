@@ -1,3 +1,5 @@
 window.onload = () => {
-    alert(`JavaScript Works`);
+    
+    let output = document.getElementById(`output`);
+
 };
