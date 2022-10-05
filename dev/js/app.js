@@ -1,5 +1,6 @@
 window.onload = () => {
     
+    // set up initial variables
     let matrix = document.getElementById(`initial`);
     let content = ``;
 
@@ -8,6 +9,8 @@ window.onload = () => {
     let mainArray = new Array(input);
     console.log(`Array size is ${input.length}`);
 
+
+    // display initial matrix
     content = `<table>`;
 
     for (let i = 0; i < mainArray.length; i++) {
@@ -23,5 +26,8 @@ window.onload = () => {
     content += `</table>`;
 
     matrix.innerHTML = content;
+
+
+    
 
 };
