@@ -45,8 +45,10 @@ window.onload = () => {
             if (!((len + ((len - 1) * i)) === currNum)) {
                 currNum = len*len - currNum;    // flip the numbers
                 currNum++;      // account for array index
+                content += `<td>${currNum}</td>`;
             }
-            content += `<td>${currNum}</td>`;
+            else
+                content += `<td style="background-color: yellow">${currNum}</td>`;
         }
 
         content += `</tr>`;
