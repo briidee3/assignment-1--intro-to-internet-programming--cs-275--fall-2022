@@ -1,0 +1,32 @@
+h1 {
+  color: #b8bbbb;
+  text-align: center;
+  text-decoration: underline;
+}
+h2 {
+  color: #b8bbbb;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.matrix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+td {
+  border: 2px solid #2a2a2a;
+  text-align: center;
+  padding: 5px;
+}
+
+table {
+  background-color: #b2b2b2;
+  border:inset 7px red;
+  border-collapse: collapse;
+}
+
+body {
+  background-image: url(https://cdn.shopify.com/s/files/1/0274/7429/6892/products/D636.jpg?v=1602656440);
+}
