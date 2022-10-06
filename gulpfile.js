@@ -12,6 +12,11 @@ let validateHTML = () => {
         .pipe(htmlValidator(undefined));
 }
 
+let validateCSS = () => {
+    return src(`dev/css/style.css`)
+        .pipe(cssValidator(undefined));
+}
+
 let compressHTML = () => {
     return src(`dev/html/index.html`)
         .pipe(htmlCompressor({collapseWhitespace: true}))
@@ -69,7 +74,7 @@ exports.transpileJSForDev = transpileJSForDev;
 exports.compressHTML = compressHTML;
 exports.compressCSS = compressCSS;
 exports.transpileJSForProd = transpileJSForProd;
-exports.serve = series(
+exports.build = series(
     validateHTML,
     validateJS,
     transpileJSForDev,
