@@ -1,5 +1,6 @@
 window.onload = () => {
     let output = document.getElementById(`output`);
+    let reverse = document.getElementById(`reverse`);
     let content = ``;
     let counter = 1;
 
@@ -25,4 +26,15 @@ window.onload = () => {
     }
     content += `</table>`;
     output.innerHTML = content;
+
+    content = `<table>`;
+    for (let i = 0; i < myNewArray.length; i++) {
+        content += `<tr>`;
+        for (let j = 0; j < myNewArray.length; j++) {
+            content += `<td>${counter++}</td>`;            
+        }
+        content += '</tr>'
+    }
+    content += `</table>`;
+    reverse.innerHTML = content;
 }
