@@ -1,4 +1,11 @@
 const { watch } = require(`gulp`),
+CSSLinter = require(`gulp-stylelint`),
+    del = require(`del`),
+    babel = require(`gulp-babel`),
+    htmlCompressor = require(`gulp-htmlmin`),
+    htmlValidator = require(`gulp-html`),
+    jsCompressor = require(`gulp-uglify`),
+    jsLinter = require(`gulp-eslint`),
     browserSync = require(`browser-sync`),
     reload = browserSync.reload;
 
