@@ -102,3 +102,7 @@ exports.serve = series(
     transpileJSForDev,
     serve
 );
+exports.build = series(
+    compressHTML,
+    transpileJSForProd,
+);
