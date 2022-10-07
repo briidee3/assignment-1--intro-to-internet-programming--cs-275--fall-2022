@@ -100,12 +100,12 @@ for(let i = 0; i < z; i++) {
     reversed += `<tr>`;
 
     for(let j = 0; j < z; j++) {
-       
+        if(i+j === z-1 ){ 
+        }
     }
 
     reversed += `</tr>`;
 }
-
 
 reversed += `</table>`;
 
