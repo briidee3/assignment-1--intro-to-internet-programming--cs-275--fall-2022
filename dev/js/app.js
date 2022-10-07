@@ -10,6 +10,12 @@
  let counter = 1;
  let reversed = ``;
  let revoutput = document.getElementById(`revoutput`);
+let repeat = false;
+let output = document.getElementById(`output`);
+let content = ``;
+let counter = 1;
+let reversed = ``;
+let revoutput = document.getElementById(`revoutput`);
 
 // Takes input from user
 let enteredInteger = prompt(`What size is your square matrix?`);
@@ -93,6 +99,7 @@ const mirrorArray = (matrix) => {
         }
     }
 }
+};
 
 mirrorArray(arr);
 
@@ -105,6 +112,7 @@ for(let i = 0; i < z; i++) {
     for(let j = 0; j < z; j++) {
         if(i+j === z-1 ){ 
         reversed += `<td bgcolor= "grey" style="font-weight:bold">${arr[i][j]}</td>`;
+            reversed += `<td bgcolor= "grey" style="font-weight:bold">${arr[i][j]}</td>`;
         } 
         else{
             reversed += `<td>${arr[i][j]}</td>`;
