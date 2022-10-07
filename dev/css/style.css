@@ -7,3 +7,8 @@ td{
     border: 1px solid;
     border-color: red;
 }
+
+table {
+    border-collapse: collapse;
+    margin-top: 10px;
+}
