@@ -9,6 +9,10 @@ const { src, dest, series, watch } = require(`gulp`),
 
 let browserChoice = `default`;
 
+async function chrome () {
+    browserChoice = `google chrome`;
+}
+
 let validateHTML = () => {
     return src([
         `dev/html/*.html`,
@@ -17,9 +21,18 @@ let validateHTML = () => {
 };
 
 let compressHTML = () => {
-    return src([`dev/html/*.html`,`dev/html/**/*.html`])
+    return src([
+        `dev/html/*.html`,
+        `dev/html/**/*.html`])
         .pipe(htmlCompressor({collapseWhitespace: true}))
         .pipe(dest(`prod`));
+};
+
+let valCSS = () => {
+    return src([
+        `dev/css/*.css`,
+        `dev/css/**/*.css`])
+        .pipe(validateCSS(undefined));
 };
 
 let compressCSS = () => {
@@ -65,3 +78,22 @@ let serve = () => {
     watch(`dev/css/*.css`, validateCSS).on(`change`, reload);
     watch(`dev/js/*.js`, series(validateJS, transpileJSForDev)).on(`change`, reload);
 }
+
+exports.chrome = series(chrome, serve);
+exports.validateHTML = validateHTML;
+exports.compressCSS = compressCSS;
+exports.validateCSS = validateCSS;
+exports.compressHTML = compressHTML;
+exports.validateJS = validateJS;
+exports.transpileJSForDev = transpileJSForDev;
+exports.transpileJSForProd = transpileJSForProd;
+exports.serve = series(
+    validateHTML,
+    validateCSS,
+    validateJS,
+    transpileJSForDev,
+    serve
+);
+
+exports.default = serve;
+

@@ -1,21 +1,21 @@
 window.onload = () => {
-    let output = document.getElementById(`output`);
+    let firstOutput = document.getElementById(`output`);
     let content = ``;
     let counter = 1;
 
-    let input = window.prompt(`Tell me the size of your table`, 20);
-    input = parseInt(input, 10);
+    let input = window.prompt(`What is the size of the matrix?`);
+    input = parseInt(input);
     console.log(typeof input);
 
-    let myNewArray = new Array(input);
-    console.log(`The size of your new array is ${myNewArray.length}`);
+    let inputArray = new Array(input);
+    console.log(`The size of the array is ${inputArray.length}`);
 
     content = `<table>`;
 
-    for(let i = 0; i < myNewArray.length; i++) {
+    for(let i = 0; i < inputArray.length; i++) {
         content += `<tr>`;
 
-        for(let j = 0; j < myNewArray.length; j++) {
+        for(let j = 0; j < inputArray.length; j++) {
             content += `<td>${counter++}</td>`;
         }
 
@@ -24,5 +24,28 @@ window.onload = () => {
 
     content += `</table>`;
 
-    output.innerHTML = content;
+    firstOutput.innerHTML = content;
+
+    //Flipped matrix
+
+    content = `<table>`;
+
+    for(let i = 0; i < inputArray.length; i++) {
+        content += `<tr>`;
+
+        for(let j = i; j < inputArray.length - i - 1; j++) {
+
+            let temp = 
+            content += `<td>${counter++}</td>`;
+
+        }
+
+        content += `</tr>`;
+    }
+
+
+
+
+
+
 };
