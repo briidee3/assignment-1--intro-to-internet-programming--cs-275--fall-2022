@@ -1,0 +1,17 @@
+body {
+  background-color: green;
+}
+
+table,
+td {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 12px 0;
+}
+
+td {
+  padding: 12px;
+}
