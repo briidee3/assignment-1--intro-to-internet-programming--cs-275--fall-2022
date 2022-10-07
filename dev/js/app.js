@@ -7,6 +7,11 @@ window.onload = () => {
 let input =  window.prompt(`Insert a Number Here`);
 input = parseInt(input, 10);
 console.log(typeof input);
+if (input < 2) {
+    alert(`Cannot use any number less than 2. Retry.`)
+} else if (isNaN(input) === true) {
+    alert(`The input is invalid. Retry.`)
+}
 
 let newArray = new Array(input);
 console.log(`This is the size of your array: ${newArray.length}`)
