@@ -1,0 +1,28 @@
+header {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    background: #bdbdbd;
+    border-radius: 20px;
+    border: 15px solid #999;
+    border-color: #bdbdbd;
+}
+
+h2 {
+    text-align: center;
+}
+
+table, td {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    padding: 15px;
+}
