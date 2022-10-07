@@ -1,7 +1,7 @@
 {
   "name": "assignment-1--intro-to-internet-programming--cs-275--fall-2022",
   "version": "1.0.0",
-  "description": "",
+  "description": "* **Do not start this project until you have read these instructions carefully and you understand them. If something is not clear, ask.**",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/code-warrior/assignment-1--intro-to-internet-programming--cs-275--fall-2022.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Matthew Sirois",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/code-warrior/assignment-1--intro-to-internet-programming--cs-275--fall-2022/issues"
@@ -19,5 +19,14 @@
   "homepage": "https://github.com/code-warrior/assignment-1--intro-to-internet-programming--cs-275--fall-2022#readme",
   "dependencies": {
     "eslint": "^8.12.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-uglify": "^3.0.2"
   }
 }
