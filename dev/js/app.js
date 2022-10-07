@@ -39,3 +39,5 @@ while(repeat){
         repeat=false;
     }
 }
+
+let arr = new Array(afterParse);
