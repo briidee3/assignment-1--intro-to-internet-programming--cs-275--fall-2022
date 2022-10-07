@@ -7,8 +7,6 @@ const { watch, src, dest, series } = require(`gulp`),
     cssValidator = require(`gulp-clean-css`),
     reload = browserSync.reload;
 
-    
-
 let validateHTML = () => {
     return src(`dev/html/index.html`)
         .pipe(cssValidator(undefined));
