@@ -95,9 +95,17 @@ function mirrorArray(matrix) {
 mirrorArray(arr);
 
 reversed = `<table>`;
+
 for(let i = 0; i < z; i++) {
     reversed += `<tr>`;
+
+    for(let j = 0; j < z; j++) {
+       
+    }
+
+    reversed += `</tr>`;
 }
+
 
 reversed += `</table>`;
 
