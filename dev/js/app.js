@@ -16,8 +16,6 @@ if (input < 2) {
 let newArray = new Array(input);
 console.log(`This is the size of your array: ${newArray.length}`)
 
-flipCounter = Math.pow(newArray.length, 2);
-   
 content = `<table>`;
 
     for(let i = 0; i < newArray.length; i++) {
@@ -41,7 +39,12 @@ content = `<table>`;
         content += `<tr>`;
 
     for(let j = 0; j < newArray.length; j++) {
-        content += `<td>${flipCounter--}</td>`;
+        let flipCounter = 1 + j + (i * newArray.length);
+        if (!((newArray.length + ((newArray.length - 1) * i)) === flipCounter)) {
+            flipCounter = newArray.length * newArray.length - flipCounter;
+            flipCounter++;
+        }
+        content += `<td>${flipCounter}</td>`;
     }
 
     content += `</tr>`;
