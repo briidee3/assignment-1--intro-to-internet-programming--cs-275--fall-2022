@@ -71,3 +71,8 @@ content += `</table>`;
 output.innerHTML = content;
 
 let z = arr.length;
+
+function mirrorArray(matrix) {
+    let i, j, temp;
+
+}
