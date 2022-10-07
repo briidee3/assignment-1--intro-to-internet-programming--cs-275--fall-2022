@@ -3,8 +3,9 @@ window.onload = () => {
     let flippedArray = document.getElementById(`flippedArray`);
     let content = ``;
     let counter = 1;
-
+    // Input prompt to the user
     let input = window.prompt(`What is the size of the matrix?`);
+    // Sentinel
     while (input < 2) {
         input = window.prompt(`Incorrect input, please enter a whole number larger than 1.`);
     }
@@ -15,7 +16,7 @@ window.onload = () => {
     let inputArray = new Array(input);
 
     content = `<table>`;
-
+    // Generating normal array
     for(let i = 0; i < inputArray.length; i++) {
         content += `<tr>`;
 
@@ -38,12 +39,12 @@ window.onload = () => {
         content += `<tr>`;
 
         for(let j = 0; j < inputArray.length; j++) {
-
-            tempHolder = (i * inputArray.length) + j + 1;
+            //Holding a temporary variable for current place in array
+            let tempHolder = (i * inputArray.length) + j + 1;
 
             if(!((inputArray.length + ((inputArray.length - 1) * i) === tempHolder ))) {
 
-                tempHolder = inputArray.length * inputArray.length - tempHolder;
+                tempHolder = (inputArray.length * inputArray.length) - tempHolder;
                 tempHolder++;
             }
 
@@ -56,7 +57,7 @@ window.onload = () => {
 
     content += `</table>`;
 
-    flippedArray.innterHTML = content;
+    flippedArray.innerHTML = content;
 
 
 
