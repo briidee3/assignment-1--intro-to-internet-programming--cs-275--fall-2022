@@ -28,10 +28,10 @@ window.onload = () => {
     output.innerHTML = content;
 
     content = `<table>`;
-    for (let i = 0; i < myNewArray.length; i++) {
+    for (let i = (Math.pow(myNewArray.length, 2) - 1); i > myNewArray.length; i--) {
         content += `<tr>`;
-        for (let j = 0; j < myNewArray.length; j++) {
-            content += `<td>${counter++}</td>`;            
+        for (let j = (Math.pow(myNewArray.length, 2) - 1); j > myNewArray.length; j--) {
+            content += `<td>${counter--}</td>`;            
         }
         content += '</tr>'
     }
