@@ -9,10 +9,9 @@ window.onload = () => {
     while (input < 2) {
         input = window.prompt(`Incorrect input, please enter a whole number larger than 1.`);
     }
-
+    //Assign user input value to array value
     input = parseInt(input);
     console.log(typeof input);
-
     let inputArray = new Array(input);
 
     content = `<table>`;
@@ -41,7 +40,7 @@ window.onload = () => {
         for(let j = 0; j < inputArray.length; j++) {
             //Holding a temporary variable for current place in array
             let tempHolder = (i * inputArray.length) + j + 1;
-
+            //Checking for any potential diagonal values in array
             if(!((inputArray.length + ((inputArray.length - 1) * i) === tempHolder ))) {
 
                 tempHolder = (inputArray.length * inputArray.length) - tempHolder;
