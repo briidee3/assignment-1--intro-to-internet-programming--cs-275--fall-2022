@@ -73,6 +73,9 @@ output.innerHTML = content;
 let z = arr.length;
 
 function mirrorArray(matrix) {
-    let i, j, temp;
+    let i;
 
+    for (i = 0; i < ~~(z / 2); i++) {
+      
+    }
 }
