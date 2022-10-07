@@ -22,3 +22,7 @@ body {
   td {
     padding: 12px;
   }
+
+  h1 {
+    text-align: center;
+  }
