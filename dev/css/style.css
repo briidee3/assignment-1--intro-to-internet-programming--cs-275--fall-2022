@@ -15,9 +15,11 @@ td {
 
 table {
     border-collapse: collapse;
-    margin: 12px 0;
+    margin: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 td {
-    padding: 5px;
+    padding: 15px;
 }
