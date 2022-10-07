@@ -4,6 +4,9 @@ window.onload = () => {
     let counter = 1;
 
     let input = window.prompt(`What is the size of the matrix?`);
+    if(input < 2 ||) {
+        window.prompt(`Incorrect input, please enter a whole number larger than 1`)
+    }
     input = parseInt(input);
     console.log(typeof input);
 
@@ -33,7 +36,7 @@ window.onload = () => {
     for(let i = 0; i < inputArray.length; i++) {
         content += `<tr>`;
 
-        for(let j = i; j < inputArray.length - i - 1; j++) {
+        for(let j = 0; j < inputArray.length; j++) {
 
             let temp = 
             content += `<td>${counter++}</td>`;
