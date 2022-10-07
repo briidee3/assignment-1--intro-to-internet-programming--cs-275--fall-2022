@@ -69,3 +69,5 @@ for(let i = 0; i < arr.length; i++) {
 content += `</table>`;
 
 output.innerHTML = content;
+
+let z = arr.length;
