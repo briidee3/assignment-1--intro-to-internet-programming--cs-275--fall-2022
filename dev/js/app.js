@@ -81,6 +81,11 @@ function mirrorArray(matrix) {
                 temp = matrix[i][j];
                 matrix[i][j] = temp;
             }
+            else{
+                temp = matrix[i][j];
+                matrix[i][j] = matrix[z - 1 - i][z - 1 - j];
+                matrix[z - 1 - i][z - 1 - j] = temp;
+            }
         }
     }
 }
