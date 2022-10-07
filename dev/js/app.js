@@ -5,7 +5,9 @@
  */
 
  let repeat = false;
-
+ let output = document.getElementById(`output`);
+ let content = ``;
+ let counter = 1;
 
 // Takes input from user
 let enteredInteger = prompt(`What size is your square matrix?`);
@@ -53,3 +55,9 @@ for (let i = 0; i < arr.length; i++){
         arr[i][j]=h++;
     }
 }
+
+content = `<table>`;
+
+content += `</table>`;
+
+output.innerHTML = content;
