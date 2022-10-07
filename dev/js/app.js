@@ -41,3 +41,7 @@ while(repeat){
 }
 
 let arr = new Array(afterParse);
+
+for(let i = 0; i < arr.length; i++){
+    arr[i] = new Array(afterParse);
+}
