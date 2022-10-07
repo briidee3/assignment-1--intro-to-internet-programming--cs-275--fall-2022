@@ -4,12 +4,6 @@
  * 10/06/2022
  */
 
- let repeat = false;
- let output = document.getElementById(`output`);
- let content = ``;
- let counter = 1;
- let reversed = ``;
- let revoutput = document.getElementById(`revoutput`);
 let repeat = false;
 let output = document.getElementById(`output`);
 let content = ``;
@@ -98,7 +92,6 @@ const mirrorArray = (matrix) => {
             }
         }
     }
-}
 };
 
 mirrorArray(arr);
@@ -111,7 +104,6 @@ for(let i = 0; i < z; i++) {
 
     for(let j = 0; j < z; j++) {
         if(i+j === z-1 ){ 
-        reversed += `<td bgcolor= "grey" style="font-weight:bold">${arr[i][j]}</td>`;
             reversed += `<td bgcolor= "grey" style="font-weight:bold">${arr[i][j]}</td>`;
         } 
         else{
