@@ -72,6 +72,7 @@ output.innerHTML = content;
 
 let z = arr.length;
 
+// Function to flip the array
 function mirrorArray(matrix) {
     let i, j, temp;
 
@@ -89,3 +90,5 @@ function mirrorArray(matrix) {
         }
     }
 }
+
+mirrorArray(arr);
