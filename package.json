@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/code-warrior/assignment-1--intro-to-internet-programming--cs-275--fall-2022#readme",
   "dependencies": {
-    "eslint": "^8.12.0"
+    "eslint": "^8.12.0",
+    "@babel/preset-env": "7.19.3",
+    "@babel/core": "7.19.3"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
