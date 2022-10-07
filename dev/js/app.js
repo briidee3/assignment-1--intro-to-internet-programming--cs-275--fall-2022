@@ -57,6 +57,7 @@ for (let i = 0; i < arr.length; i++){
     }
 }
 
+// Prints the original matrix as table
 content = `<table>`;
 for(let i = 0; i < arr.length; i++) {
     content += `<tr>`;
@@ -94,6 +95,7 @@ function mirrorArray(matrix) {
 
 mirrorArray(arr);
 
+// Prints the reversed matrix as table
 reversed = `<table>`;
 
 for(let i = 0; i < z; i++) {
