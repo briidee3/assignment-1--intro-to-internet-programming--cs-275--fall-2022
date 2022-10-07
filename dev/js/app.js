@@ -59,7 +59,12 @@ for (let i = 0; i < arr.length; i++){
 content = `<table>`;
 for(let i = 0; i < arr.length; i++) {
     content += `<tr>`;
-    
+
+    for(let j = 0; j < arr.length; j++) {
+        content += `<td>${counter++}</td>`;
+    }
+
+    content += `</tr>`;
 }
 content += `</table>`;
 
