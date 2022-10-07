@@ -101,7 +101,8 @@ for(let i = 0; i < z; i++) {
 
     for(let j = 0; j < z; j++) {
         if(i+j === z-1 ){ 
-        }
+        reversed += `<td>${arr[i][j]}</td>`;
+        } 
     }
 
     reversed += `</tr>`;
