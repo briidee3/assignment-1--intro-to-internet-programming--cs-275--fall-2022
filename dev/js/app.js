@@ -92,3 +92,9 @@ function mirrorArray(matrix) {
 }
 
 mirrorArray(arr);
+
+reversed = `<table>`;
+
+reversed += `</table>`;
+
+revoutput.innerHTML = reversed;
