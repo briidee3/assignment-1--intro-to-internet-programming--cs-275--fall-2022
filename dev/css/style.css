@@ -8,8 +8,11 @@ header {
     border-color: #bdbdbd;
 }
 
-table,
-td {
+h2 {
+    text-align: center;
+}
+
+table, td {
     border: 1px solid black;
 }
 

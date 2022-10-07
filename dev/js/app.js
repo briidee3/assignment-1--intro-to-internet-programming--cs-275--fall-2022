@@ -17,7 +17,8 @@ window.onload = () => {
     console.log(`the size of my new array is ${myArray.length}`);
     let revcounter = Math.pow(myArray.length, 2);
 
-    content = `<table>`;
+    content = `<h2>Original Matrix</h2>`;
+    content += `<table>`;
     for (let i = 0; i < myArray.length; i++) {
         content += `<tr>`;
         for (let j = 0; j < myArray.length; j++) {
@@ -28,7 +29,8 @@ window.onload = () => {
     content += `</table>`;
     output.innerHTML = content;
 
-    content = `<table>`;
+    content = `<h2>Reversed Matrix</h2>`;
+    content += `<table>`;
     for (let i = 0; i < myArray.length; i++) {
         content += `<tr>`;
         for (let j = 0; j < myArray.length; j++) {
