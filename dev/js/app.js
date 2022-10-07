@@ -9,6 +9,7 @@
  let content = ``;
  let counter = 1;
  let reversed = ``;
+ let revoutput = document.getElementById(`revoutput`);
 
 // Takes input from user
 let enteredInteger = prompt(`What size is your square matrix?`);
@@ -75,7 +76,7 @@ output.innerHTML = content;
 let z = arr.length;
 
 // Function to flip the array
-function mirrorArray(matrix) {
+const mirrorArray = (matrix) => {
     let i, j, temp;
 
     for (i = 0; i < ~~(z / 2); i++) {
