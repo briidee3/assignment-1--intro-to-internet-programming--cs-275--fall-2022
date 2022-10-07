@@ -1,33 +1,26 @@
 
 const { src, dest, series, watch } = require(`gulp`),
     babel = require(`gulp-babel`),
-    htmlValidator = require(`gulp-htmlmin`),
-    cssValidator = require(`gulp-clean-css`),
-    jsCompressor = require(`gulp-uglify`),
+    htmlCompressor = require(`gulp-htmlmin`);
+    cssCompressor = require(`gulp-clean-css`),
     jsValidator = require(`gulp-eslint`),
+    jsCompressor = require(`gulp-uglify`),
     browserSync = require(`browser-sync`)
     reload = browserSync.reload;
+    
 
 let browserChoice = `default`;
 
-let compressCSS = () => {
-    return src([`dev/css/*.css`,`dev/css/**/*.css`])
-        .pipe(htmlValidator({collapseWhitespace: true}))
-        .pipe(dest(`prod/css`));
+let compressHTML = () => {
+    return src([`dev/html/*.html`,`dev/html/**/*.html`])
+        .pipe(htmlCompressor({collapseWhitespace: true}))
+        .pipe(dest(`prod/html`));
 };
 
-let validateCSS = () => {
-    return src([
-        `dev/css/*.css`,
-        `dev/css/**/*.css`])
-        .pipe(cssValidator(undefined));
-}
-
-let validateHTML = () => {
-    return src([
-        `dev/html/*.html`,
-        `dev/html/**/*.html`])
-        .pipe(htmlValidator(undefined));
+let compressCSS = () => {
+    return src([`dev/css/*.css`,`dev/css/**/*.css`])
+        .pipe(cssCompressor({collapseWhitespace: true}))
+        .pipe(dest(`prod/css`));
 };
 
 let validateJS = () => {
@@ -38,32 +31,21 @@ let validateJS = () => {
         .pipe(jsValidator.formatEach(`compact`));
 };
 
-let compileCSSForDev = () => {
-    return src(`dev/styles/scss/main.scss`)
-        .pipe(sass.sync({
-            outputStyle: `expanded`,
-            precision: 10
-        }).on(`error`, sass.logError))
-        .pipe(dest(`temp/styles`));
-};
-
 let transpileJSForDev = () => {
-    return src(`dev/scripts/*.js`)
+    return src([
+        `dev/js/*.js`,
+        `dev/js/**/*.js`])
         .pipe(babel())
-        .pipe(dest(`temp/scripts`));
-};
-
-let compressHTML = () => {
-    return src([`dev/html/*.html`,`dev/html/**/*.html`])
-        .pipe(htmlCompressor({collapseWhitespace: true}))
-        .pipe(dest(`prod`));
+        .pipe(dest(`temp/js`));
 };
 
 let transpileJSForProd = () => {
-    return src(`dev/scripts/*.js`)
+    return src([
+        `dev/js/*.js`,
+        `dev/js/**/*.js`])
         .pipe(babel())
         .pipe(jsCompressor())
-        .pipe(dest(`prod/scripts`));
+        .pipe(dest(`prod/js`));
 };
 
 let serve = () => {
@@ -80,29 +62,23 @@ let serve = () => {
         }
     });
 
-    watch(`dev/html/*.html`, validateHTML).on(`change`, reload);
-    watch(`dev/css/*.css`, validateCSS).on(`change`, reload);
+    watch(`dev/html/*.html`).on(`change`, reload);
+    watch(`dev/css/*.css`).on(`change`, reload);
     watch(`dev/js/*.js`, series(validateJS, transpileJSForDev)).on(`change`, reload);
 };
 
-
-
-exports.validateHTML = validateHTML;
-exports.validateCSS = validateCSS;
-exports.validateJS = validateJS;
-exports.compileCSSForDev = compileCSSForDev;
-exports.transpileJSForDev = transpileJSForDev;
 exports.compressHTML = compressHTML;
 exports.compressCSS = compressCSS;
+exports.validateJS = validateJS;
+exports.transpileJSForDev = transpileJSForDev;
 exports.transpileJSForProd = transpileJSForProd;
 exports.serve = series(
-    validateHTML,
-    validateCSS,
     validateJS,
     transpileJSForDev,
     serve
 );
 exports.build = series(
     compressHTML,
+    compressCSS,
     transpileJSForProd,
 );
