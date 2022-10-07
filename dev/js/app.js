@@ -103,6 +103,9 @@ for(let i = 0; i < z; i++) {
         if(i+j === z-1 ){ 
         reversed += `<td bgcolor= "grey" style="font-weight:bold">${arr[i][j]}</td>`;
         } 
+        else{
+            reversed += `<td>${arr[i][j]}</td>`;
+        }
     }
 
     reversed += `</tr>`;
