@@ -30,7 +30,6 @@ window.onload = () => {
     }
     let myArray = new Array(parsed);
     console.log(`the size of my new array is ${myArray.length}`);
-    let revcounter = Math.pow(myArray.length, 2);
 
     content = `<h2>Original Matrix</h2>`;
     content += `<table>`;
@@ -49,7 +48,12 @@ window.onload = () => {
     for (let i = 0; i < myArray.length; i++) {
         content += `<tr>`;
         for (let j = 0; j < myArray.length; j++) {
-            content += `<td>${revcounter--}</td>`;            
+            let revcounter = 1 + j + (i * myArray.length);
+            if (!((myArray.length + ((myArray.length - 1) * i)) === revcounter)) {
+                revcounter = myArray.length * myArray.length - revcounter;
+                revcounter++;
+            }
+            content += `<td>${revcounter}</td>`;            
         }
         content += '</tr>'
     }
