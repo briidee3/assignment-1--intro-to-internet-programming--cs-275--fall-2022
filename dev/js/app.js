@@ -77,7 +77,9 @@ function mirrorArray(matrix) {
 
     for (i = 0; i < ~~(z / 2); i++) {
         for (j = 0; j < z; j++) {
+            if(i+j === z-1){ 
             
+            }
         }
     }
 }
