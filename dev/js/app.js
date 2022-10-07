@@ -22,3 +22,20 @@ else if (afterParse < 1 ){
 else{
     repeat=false;
 }
+
+// Looping the prompt until a valid input is entered
+while(repeat){
+    enteredInteger = prompt(`What size is your square matrix?`);
+    afterParse = parseInt(parseFloat(enteredInteger));
+    if (isNaN(afterParse) || !Number.isInteger(afterParse)){
+        alert(`The input is invalid, please enter a different input:`);
+        repeat = true;
+    }
+    else if (afterParse < 1 ){
+        alert(`The input is less than 1, please enter a different input:`);
+        repeat = true;
+    }
+    else{
+        repeat=false;
+    }
+}
