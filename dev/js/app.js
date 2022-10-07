@@ -16,7 +16,9 @@ if (input < 2) {
 let newArray = new Array(input);
 console.log(`This is the size of your array: ${newArray.length}`)
 
-    content = `<table>`;
+flipCounter = Math.pow(newArray.length, 2);
+   
+content = `<table>`;
 
     for(let i = 0; i < newArray.length; i++) {
         content += `<tr>`;
@@ -31,4 +33,21 @@ console.log(`This is the size of your array: ${newArray.length}`)
     content += `</table>`;
 
     output.innerHTML = content;
+
+
+    content = `<table>`;
+
+    for(let i = 0; i < newArray.length; i++) {
+        content += `<tr>`;
+
+    for(let j = 0; j < newArray.length; j++) {
+        content += `<td>${flipCounter--}</td>`;
+    }
+
+    content += `</tr>`;
+}
+
+content += `</table>`;
+
+flipped.innerHTML = content;
 };
