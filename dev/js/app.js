@@ -57,7 +57,10 @@ for (let i = 0; i < arr.length; i++){
 }
 
 content = `<table>`;
-
+for(let i = 0; i < arr.length; i++) {
+    content += `<tr>`;
+    
+}
 content += `</table>`;
 
 output.innerHTML = content;
