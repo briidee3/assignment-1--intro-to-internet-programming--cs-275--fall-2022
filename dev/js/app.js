@@ -41,7 +41,15 @@ while(repeat){
 }
 
 let arr = new Array(afterParse);
+let h = 1; 
 
+// Initialize matrix to fill it with numbers
 for(let i = 0; i < arr.length; i++){
     arr[i] = new Array(afterParse);
+}
+
+for (let i = 0; i < arr.length; i++){
+    for(let j = 0; j < arr.length; j++){
+        arr[i][j]=h++;
+    }
 }
