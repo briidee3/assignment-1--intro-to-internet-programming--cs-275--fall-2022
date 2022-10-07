@@ -1,17 +1,18 @@
 window.onload = () => {
-    let firstOutput = document.getElementById(`output`);
+    let firstArray = document.getElementById(`firstArray`);
+    let flippedArray = document.getElementById(`flippedArray`);
     let content = ``;
     let counter = 1;
 
     let input = window.prompt(`What is the size of the matrix?`);
-    if(input < 2 ||) {
-        window.prompt(`Incorrect input, please enter a whole number larger than 1`)
+    while (input < 2) {
+        input = window.prompt(`Incorrect input, please enter a whole number larger than 1.`);
     }
+
     input = parseInt(input);
     console.log(typeof input);
 
     let inputArray = new Array(input);
-    console.log(`The size of the array is ${inputArray.length}`);
 
     content = `<table>`;
 
@@ -27,7 +28,7 @@ window.onload = () => {
 
     content += `</table>`;
 
-    firstOutput.innerHTML = content;
+    firstArray.innerHTML = content;
 
     //Flipped matrix
 
@@ -38,13 +39,24 @@ window.onload = () => {
 
         for(let j = 0; j < inputArray.length; j++) {
 
-            let temp = 
-            content += `<td>${counter++}</td>`;
+            tempHolder = (i * inputArray.length) + j + 1;
+
+            if(!((inputArray.length + ((inputArray.length - 1) * i) === tempHolder ))) {
+
+                tempHolder = inputArray.length * inputArray.length - tempHolder;
+                tempHolder++;
+            }
+
+            content += `<td>${tempHolder}</td>`;
 
         }
 
         content += `</tr>`;
     }
+
+    content += `</table>`;
+
+    flippedArray.innterHTML = content;
 
 
 
