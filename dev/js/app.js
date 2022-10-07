@@ -13,13 +13,14 @@ window.onload = () => {
         alert(`Input invalid. Please try again.`)
     }
 
-    let myNewArray = new Array(input);
-    console.log(`the size of my new array is ${myNewArray.length}`);
+    let myArray = new Array(input);
+    console.log(`the size of my new array is ${myArray.length}`);
+    let revcounter = Math.pow(myArray.length, 2);
 
     content = `<table>`;
-    for (let i = 0; i < myNewArray.length; i++) {
+    for (let i = 0; i < myArray.length; i++) {
         content += `<tr>`;
-        for (let j = 0; j < myNewArray.length; j++) {
+        for (let j = 0; j < myArray.length; j++) {
             content += `<td>${counter++}</td>`;            
         }
         content += '</tr>'
@@ -28,10 +29,10 @@ window.onload = () => {
     output.innerHTML = content;
 
     content = `<table>`;
-    for (let i = (Math.pow(myNewArray.length, 2) - 1); i > myNewArray.length; i--) {
+    for (let i = 0; i < myArray.length; i++) {
         content += `<tr>`;
-        for (let j = (Math.pow(myNewArray.length, 2) - 1); j > myNewArray.length; j--) {
-            content += `<td>${counter--}</td>`;            
+        for (let j = 0; j < myArray.length; j++) {
+            content += `<td>${revcounter--}</td>`;            
         }
         content += '</tr>'
     }
