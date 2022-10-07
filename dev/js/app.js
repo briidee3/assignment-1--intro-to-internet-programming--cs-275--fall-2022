@@ -19,3 +19,6 @@ else if (afterParse < 1 ){
     alert(`The input is less than 1, please enter a different input:`);
     repeat = true;
 }
+else{
+    repeat=false;
+}
