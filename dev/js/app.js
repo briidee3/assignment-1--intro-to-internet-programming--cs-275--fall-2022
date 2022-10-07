@@ -1,9 +1,6 @@
 window.onload = () => {
-    alert(`JavaScript Works`);
-};
-
-window.onload = () => {
-    let output = document.getElementById(`output`);
+    let firstMatrix = document.getElementById(`normal`);
+    let secondMatrix = document.getElementById(`flipped`);
     let content = ``;
     let counter = 1;
 
@@ -11,15 +8,15 @@ window.onload = () => {
     input = parseInt(input, 10);
     console.log(typeof input);
 
-    let myNewArray = new Array(input);
-    console.log(`The size of your new array is ${myNewArray.length}`);
+    let myMatrix = new Array(input);
+    console.log(`The size of your new array is ${myMatrix.length}`);
 
     content = `<table>`;
 
-    for(let i = 0; i < myNewArray.length; i++) {
+    for(let i = 0; i < myMatrix.length; i++) {
         content += `<tr>`;
 
-        for(let j = 0; j < myNewArray.length; j++) {
+        for(let j = 0; j < myMatrix.length; j++) {
             content += `<td>${counter++}</td>`;
         }
 
@@ -28,5 +25,34 @@ window.onload = () => {
 
     content += `</table>`;
 
-    output.innerHTML = content;
+    firstMatrix.innerHTML = content;
+
+    
+    
+    content = `<table>`;
+
+    for(let i = 0; i < myMatrix.length; i++) {
+        content += `<tr>`;
+
+        for(let j = 0; j < myMatrix.length; j++) {
+            
+            let flipMatrix = (1 + j + (i * myMatrix.length)); 
+            
+            if (!((myMatrix.length + ((myMatrix.length - 1) * i)) === flipMatrix)) {
+                flipMatrix = ((myMatrix.length * myMatrix.length) - flipMatrix);
+                
+                flipMatrix++;
+            }
+            
+            
+            content += `<td>${flipMatrix}</td>`;
+            
+        }
+
+        content += `</tr>`;
+    }
+
+    content += `</table>`;
+
+    secondMatrix.innerHTML = content;
 };
