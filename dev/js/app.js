@@ -73,12 +73,13 @@ output.innerHTML = content;
 let z = arr.length;
 
 function mirrorArray(matrix) {
-    let i, j;
+    let i, j, temp;
 
     for (i = 0; i < ~~(z / 2); i++) {
         for (j = 0; j < z; j++) {
             if(i+j === z-1){ 
-            
+                temp = matrix[i][j];
+                matrix[i][j] = temp;
             }
         }
     }
