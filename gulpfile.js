@@ -1,10 +1,10 @@
-const { watch, src, dest, series } = require(`gulp`),
-    babel = require(`gulp-babel`),
+const { src, dest, series, watch } = require(`gulp`),
     htmlCompressor = require(`gulp-htmlmin`),
-    jsCompressor = require(`gulp-uglify`),
-    jsValidator = require(`gulp-eslint`),
-    browserSync = require(`browser-sync`),
     cssCompressor = require(`gulp-clean-css`),
+    jsValidator = require(`gulp-eslint`),
+    babel = require(`gulp-babel`),
+    jsCompressor = require(`gulp-uglify`),
+    browserSync = require(`browser-sync`),
     reload = browserSync.reload;
 
 let compressHTML = () => {
