@@ -99,7 +99,7 @@ Thursday, 6 October 2022, at 4:00 PM.
 | *Functions declared using only arrow functions (no function hoisting)* | `10`   |
 | *Project implemented following assignment directions*                  | `10`   |
 | *`.editorconfig` implemented*                                          | `10`   |
-| *JavaScript, including `gulpfile.js` is valid (via `gulp-eslint`)*     | `10`   |
+| *JavaScript, including `gulpfile.js`, is valid (via `gulp-eslint`)*    | `10`   |
 | *Gulp development scaffold in place*                                   | `10`   |
 | *Gulp production scaffold in place*                                    | `10`   |
 
