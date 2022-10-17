@@ -1,0 +1,38 @@
+body {
+    background-color: papayawhip;
+  }
+  
+  table,
+  td {
+    border: 3px solid black;
+    text-align: center;
+    
+  }
+  
+  table {
+    text-align: center;
+    border-collapse: collapse;
+    margin-left: auto;  
+    margin-right: auto;  
+    background-color: coral;
+  }
+  
+  td {
+    padding: 12px;
+  }
+  h1 {
+    text-align: center;
+    border-collapse: collapse;
+    
+  }
+  h2{
+    text-align: center;
+    border-collapse: wrap;
+    padding: 8px;
+    border: 1px solid black;
+  }
+  em{
+    border-color: red;
+    border-collapse: collapse;
+  }
+  
