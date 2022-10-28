@@ -7,7 +7,9 @@
 ## ❖・Introduction・❖
 The goals of this assignment are to get you familiar with JavaScript syntax at the Node level with Gulp and at the browser level, and to get you to practice working with larger project scaffolds.
 
-Create a *single* web page consisting of HTML, CSS, and JavaScript that prompts the user for the size of a matrix, prints the matrix with values from 1–user input, then prints the matrix in reverse. The cells in the matrix along the diagonal from top right to bottom left should not be moved, since this is the axis along which the matrix will be reversed, or flipped. A movie of what the matrix should look like is available [here](http://vanegas.cs.hartford.edu/uploads/videos/flipping-a-matrix-along-a-diagonal.mp4).
+Create a *single* web page consisting of HTML, CSS, and JavaScript that prompts the user for the size of a matrix, prints the matrix with values from 1–user input, then prints the matrix in reverse. The cells in the matrix along the diagonal from top right to bottom left **must not** be moved, since this is the axis along which the matrix will be reversed, or flipped. A movie of what the matrix should look like is available [here](http://vanegas.cs.hartford.edu/uploads/videos/flipping-a-matrix-along-a-diagonal.mp4).
+
+**Note**: The values used to populate the matrix are to make each cell easy to read. What you place in each cell should be agnostic to how your solution works.
 
 _Work **only** within the confines of the included scaffold._
 
