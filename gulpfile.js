@@ -9,10 +9,9 @@ const { src, dest, series, watch } = require(`gulp`),
 
 let browserChoice = `default`;
 
-// for working with chrome (different syntax than example since development is on Arch Linux, 
-// this is the cmd to start chrome on Arch)
+// launch chrome
 async function chrome () {
-    browserChoice = `google-chrome-stable`;
+    browserChoice = `chrome`;
 }
 
 let validateHTML = () => {
@@ -81,7 +80,7 @@ let serve = () => {
     watch(`dev/js/*.js`, series(validateJS, transpileJSForDev)).on(`change`, reload);
 };
 
-exports.chrome = series(chrome, serve);
+exports.chrome = series(chrome, serve); // launch chrome and serve
 exports.validateHTML = validateHTML;
 exports.validateCSS = validateCSS;
 exports.validateJS = validateJS;
@@ -95,4 +94,9 @@ exports.serve = series(
     validateJS,
     transpileJSForDev,
     serve
+);
+exports.build = series(
+    compressHTML,
+    compressCSS,
+    transpileJSForProd
 );
