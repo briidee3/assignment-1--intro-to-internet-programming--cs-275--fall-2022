@@ -1,64 +1,51 @@
 window.onload = () => {
-    let output = document.getElementById(`output`);
+    let table = document.getElementById(`table`);
     let table2 = document.getElementById(`table2`);
-    let content = ``;
     let counter = 1;
-    let flip = ``;
 
-    let input = window.prompt(`Tell me the size of your table`, 20);
+    let input = window.prompt(`What is the size of your table`, 2);
     // error message if <=1
-    while (input <=1){
-         input = window.prompt(`Wrong input, enter a whole number bigger than 1`, 5);
+    while (input <= 1) {
+        input = window.prompt(`Wrong input, enter a whole number bigger than 1`, 5);
     }
 
     input = parseInt(input, 10);
-    console.log(typeof input);
-
     let myNewArray = new Array(input);
-    console.log(`The size of your new array is ${myNewArray.length}`);
-
-    content = `<table>`;// first table 
-
-    for(let i = 0; i < myNewArray.length; i++) {
+    let content = `<table>`;// first table
+    for (let i = 0; i < myNewArray.length; i++) {
         content += `<tr>`;
-
-        for(let j = 0; j < myNewArray.length; j++) {
+        for (let j = 0; j < myNewArray.length; j++) {
+        //calculate the number for current cell
             content += `<td>${counter++}</td>`;
         }
-
         content += `</tr>`;
     }
-
     content += `</table>`;
+    table.innerHTML = content;
 
-    output.innerHTML = content;
-
-    /// the start of the fipped matrix 
-    filp = `<table>`;
-
-    for(let i = 0; i < myNewArray.length; i++) {
-        filp += `<tr>`;
-
-        for(let j = 0; j < myNewArray.length; j++) {
-
-            let hold =(i*myNewArray.length) + 1 + j;
-            if(!((myNewArray.length + ((myNewArray.length -1 )*i) === hold))) {
-                hold =(myNewArray.length *myNewArray.length) - hold;
-                hold++;
-                filp += `<td>${hold}</td>`;
+    // Create the second table
+    let content2 = `<table>`;
+    // Loop through the rows in reverse order
+    for (let i = 0; i < myNewArray.length; i++) {
+        content2 += `<tr>`;
+        for (let j = 0; j < myNewArray.length; j++) {
+            let row = i;
+            let col = j;
+            // If the current cell is on the diagonal, use the original
+            if (i + j !== myNewArray.length - 1) {
+                row = myNewArray.length - 1 - i;
+                col = myNewArray.length - 1 - j;
             }
-            //numbers that dont change will turn yellow 
-            else
-            {
-                filp += `<td bgcolor =  "yellow" > ${hold}</td>`;
+            let number = (myNewArray.length * row) + col + 1;
+            if (i + j === myNewArray.length - 1) {
+                content2 += `<td class="yellow">${number}</td>`;
+            } else {
+                content2 += `<td>${number}</td>`;
             }
         }
-
-        filp += `</tr>`;
+        // Close the current row
+        content2 += `</tr>`;
     }
-
-    filp += `</table>`;
-
-    table2.innerHTML = filp;
-
+    content2 += `</table>`;
+    table2.innerHTML = content2;
 };
