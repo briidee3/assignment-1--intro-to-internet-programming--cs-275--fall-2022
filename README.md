@@ -1,3 +1,5 @@
+> Note from Bri: This is a repo that was used for the entire class; my work can be found under the "brianna-d'urso" fork.
+
 # Fall 2022 Intro to Internet Programming — Assignment 1
 
 * **Do not start this project until you have read these instructions carefully and you understand them. If something is not clear, ask.**
